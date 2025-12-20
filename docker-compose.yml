@@ -1,0 +1,17 @@
+services:
+  clintall:
+    build: 
+      context: ./
+      dockerfile: dockerfile
+    volumes:
+      - ./:/app
+    command: ["python", "/app/clinTall.py"]
+    #environment:
+    #  - CUDA_VISIBLE_DEVICES=0
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]

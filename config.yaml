@@ -1,0 +1,50 @@
+# ----------------------------
+# ClinTall YAML Configuration
+# ----------------------------
+
+tasks:
+  - hyperopt
+  - validate
+  - test_user_model
+  - predict_user_model
+
+DataManager:
+  reference_data_path: data/reference
+  user_data_path: data/user
+  validation_data_path: data/validation
+  gene_id_or_name: gene_symbol
+
+  user_data_modalities:
+    - gene_expression
+    - clinical
+    - variants
+    - cnv
+
+  validation_data_cohorts:
+    - pölönen
+    - hackenhaar
+
+  ref_file_format: tsv
+  user_file_format: tsv
+  val_file_format: tsv
+
+  validation_data_reference: pölönen
+
+
+Config:
+  datasets_for_hyperopt:
+    - Combined
+    - cnv
+    - gene_expression
+    - clinical
+    - variants
+
+  hyperparameter_space: null
+  optimize_metric_weighting: 0.5
+  num_hyperopt_trials: 75
+
+  hyperopt_save_dir: ./hyperopt_results
+  validation_save_dir: ./validation_results
+  inference_save_dir: ./inference_results
+
+  use_params: true
