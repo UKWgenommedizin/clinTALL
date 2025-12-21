@@ -17,7 +17,11 @@ Configure the options in the config.yaml file, open the commandline/shell/powers
 - ```docker-compose up ```,
 -   or ```python clinTall.py``` if you install an python environment from the requirements.txt locally
 
-By default, clinTall.py will load and execute config.yaml. For more details about the options running clinTall, see the config_example.yaml
+By default, clinTall.py will load and execute config.yaml. For more details about the options running clinTall, see the config_example.yaml and the sections below.
+
+There are two main options to use clinTall
+1) Use pretrained models to make predictions for your data (available at https://doi.org/10.5281/zenodo.18002152.)
+2) Train a custom model on your data
 
 > Note: If you don't have a cuda enabled GPU replace the clinTall_requirements.txt with clinTall_requirements_cpu_only.txt (e.g. rename and delete)
 
@@ -37,7 +41,7 @@ Config:           # Training, optimization, and inference settings
 | `test_user_model`    | Train & test user models, save models     |
 | `predict_user_model` | Apply trained user models to user data    |
 
-Multiple tasks can be run sequentially. For predictions with user models (user_model_results) pretrained models are provided and available at https://doi.org/10.5281/zenodo.18002152. (Performance reports for those are in inference_results). These models can be retrained if you provide data for it (under data/user/reference)
+Multiple tasks can be run sequentially. For predictions with user models (stored under user_model_results) pretrained models are provided and available at https://doi.org/10.5281/zenodo.18002152. (Performance reports for those are in inference_results). These models can be retrained if you provide data for it (under data/user/reference)
 
 
 For formatting of input data please reference the files data/user/*.tsv (replace with your files). If only specific data modalities 
