@@ -9,6 +9,24 @@ The framework is designed to reproduce the experiments from the associated manus
 clinTALL is controlled via a single YAML configuration file (config.yaml) that defines
 which tasks to run, where data is located, and how models are trained and evaluated.
 
+There are two main options to use clinTALL:
+1) Use pretrained models to make predictions for your data (available at https://doi.org/10.5281/zenodo.18002152.)
+-- install docker or python environment
+-- download the pretrained model from zenodo: https://doi.org/10.5281/zenodo.18002152
+-- add your own data into clintall/data/user for prediction. Detailed file description can be found in the section 3.2 below 
+-- at the directory where clintall.py is located, execute following command
+   ```docker-compose up ```
+-- after the running, results can be found in clintall/.  Detailed file description can be found in the section 4.3 below 
+   
+3) Train a custom model on your data
+-- install docker or python environment
+-- git clone or download the repository
+-- add your own data into clintall/data/user for prediction. Detailed file description can be found in the section 3.2 below
+-- at the directory where clintall.py is located, execute following command
+   ```docker-compose up ```
+-- after the running, results can be found in clintall/.  Detailed file description can be found in the section 4 below 
+   
+
 ### Quick Start
 From the project root:
 
@@ -18,10 +36,6 @@ Configure the options in the config.yaml file, open the commandline/shell/powers
 -   or ```python clinTall.py``` if you install an python environment from the requirements.txt locally
 
 By default, clinTall.py will load and execute config.yaml. For more details about the options running clinTall, see the config_example.yaml and the sections below.
-
-There are two main options to use clinTall
-1) Use pretrained models to make predictions for your data (available at https://doi.org/10.5281/zenodo.18002152.)
-2) Train a custom model on your data
 
 > Note: If you don't have a cuda enabled GPU replace the clinTall_requirements.txt with clinTall_requirements_cpu_only.txt (e.g. rename and delete)
 
@@ -75,7 +89,7 @@ are being used, specify this in the config.yaml file. Output of the models will 
 
 ## 3. Data requirements
 
-### Reference data (data/reference/)
+### 3.1 Reference data (data/reference/)
 | File | Description |
 |---|---|
 | gene_expression.tsv | Gene expression matrix (samples × genes) |
@@ -89,7 +103,7 @@ are being used, specify this in the config.yaml file. Output of the models will 
 All files must:
  - Use the same sample IDs as row indices
 
-### User data (data/user/)
+### 3.2 User data (data/user/)
 ```
 data/user/
 ├── gene_expression.tsv
@@ -134,7 +148,7 @@ data/validation/
 
 ## 4. Outputs
 
-### Hyperparameter optimization
+### 4.1 Hyperparameter optimization
 
 - Best parameters per modality (best_params_*.json)
 
@@ -142,11 +156,11 @@ data/validation/
 
 - Risk scores and predicted labels
 
-### Validation
+### 4.2 Validation
 
 - Cross-cohort predictions
 
-### User model testing & inference
+### 4.3 User model testing & inference
 
 - Trained models (models_*.pkl)
 
