@@ -11,20 +11,20 @@ which tasks to run, where data is located, and how models are trained and evalua
 
 There are two main options to use clinTALL:
 1) Use pretrained models to make predictions for your data (available at https://doi.org/10.5281/zenodo.18002152.)
--- install docker or python environment
--- download the pretrained model from zenodo: https://doi.org/10.5281/zenodo.18002152
--- add your own data into clintall/data/user for prediction. Detailed file description can be found in the section 3.2 below 
--- at the directory where clintall.py is located, execute following command
+- step1: install docker or python environment
+- step2: download the pretrained model from zenodo: https://doi.org/10.5281/zenodo.18002152
+- step3: add your own data into clintall/data/user for prediction. Detailed file description can be found in the section 3.2 below 
+- step4: at the directory where clintall.py is located, execute following command
    ```docker-compose up ```
--- after the running, results can be found in clintall/.  Detailed file description can be found in the section 4.3 below 
+- step5: after the running, results can be found in clintall/.  Detailed file description can be found in the section 4.3 below 
    
-3) Train a custom model on your data
--- install docker or python environment
--- git clone or download the repository
--- add your own data into clintall/data/user for prediction. Detailed file description can be found in the section 3.2 below
--- at the directory where clintall.py is located, execute following command
+2) Train a custom model on your data
+- install docker or python environment
+- git clone or download the repository
+- add your own data into clintall/data/user for prediction. Detailed file description can be found in the section 3.2 below
+- at the directory where clintall.py is located, execute following command
    ```docker-compose up ```
--- after the running, results can be found in clintall/.  Detailed file description can be found in the section 4 below 
+- after the running, results can be found in clintall/.  Detailed file description can be found in the section 4 below 
    
 
 ### Quick Start
