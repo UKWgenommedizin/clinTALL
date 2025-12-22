@@ -1,6 +1,6 @@
-# ClinTall: Multimodal Survival Prediction Framework
+# clinTALL: machine learning-driven multimodal based subtype classification and treatment outcome prediction in pediatric T-ALL
 
-ClinTall is a multimodal deep learning framework for survival analysis and classification using gene expression, clinical, variant, and CNV data. It supports hyperparameter optimization, cross-cohort validation, user-model training, and inference using a YAML-driven configuration.
+clinTALL is a multimodal deep learning framework for survival analysis and classification using gene expression, clinical, variant, and CNV data. It supports hyperparameter optimization, cross-cohort validation, user-model training, and inference using a YAML-driven configuration.
 
 The framework is designed to reproduce the experiments from the associated manuscript while also allowing users to train and apply their own models on custom datasets.
 
