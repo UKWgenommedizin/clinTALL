@@ -5,8 +5,8 @@ clinTALL is a multimodal deep learning framework for survival analysis and class
 The framework is designed to reproduce the experiments from the associated manuscript while also allowing users to train and apply their own models on custom datasets.
 
 
-## Running ClinTall
-ClinTall is controlled via a single YAML configuration file (config.yaml) that defines
+## 1. Running clinTALL
+clinTALL is controlled via a single YAML configuration file (config.yaml) that defines
 which tasks to run, where data is located, and how models are trained and evaluated.
 
 ### Quick Start
@@ -53,7 +53,7 @@ are being used, specify this in the config.yaml file. Output of the models will 
 
 
 
-## Project structure
+## 2. Project structure
 
 ```
 .
@@ -73,7 +73,7 @@ are being used, specify this in the config.yaml file. Output of the models will 
 
 ```
 
-## Data requirements
+## 3. Data requirements
 
 ### Reference data (data/reference/)
 | File | Description |
@@ -132,7 +132,7 @@ data/validation/
 
 
 
-## Outputs
+## 4. Outputs
 
 ### Hyperparameter optimization
 
@@ -154,11 +154,11 @@ data/validation/
 
 - Aggregated performance summaries
 
-## Dependencies
+## 5. Dependencies
 
 See clinTall_requirements.txt
 
-## Notes & caveats
+## 6. Notes & caveats
 
 - Gene expression input must be integer counts for user-model inference.
 - Feature mismatches raise explicit errors.
