@@ -28,8 +28,8 @@ class Config:
                  save_dir: str = './results',
                  hyperopt_save_dir: str = './hyperopt_results',
                  validation_save_dir: str = './validation_results',
-                 inference_save_dir: str = './inference_results',
-                 user_save_dir: str = './user_model_results',
+                 inference_save_dir: str = './prediction_results',
+                 user_save_dir: str = './user_models',
                  use_params: bool = False,
                  predict_with_user_model_modalities: list = None,):
         
@@ -89,7 +89,7 @@ class DataManager:
                  val_file_format: str = 'csv', 
                  validation_data_reference: str = 'pölönen',
                  gene_id_or_name: str = 'ensembl_id',
-                 user_model_dir: str = 'user_model_results',):
+                 user_model_dir: str = 'user_models',):
         
         self.user_model_dir = user_model_dir
         self.gene_id_or_name = gene_id_or_name

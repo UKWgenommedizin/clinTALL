@@ -59,7 +59,7 @@ DataManager:
   gene_id_or_name: ensembl_id
 
   # Directory where trained user models are saved
-  user_model_dir: user_model_results
+  user_model_dir: user_models
 
 
 # ----------------------
@@ -90,8 +90,8 @@ Config:
   # Output directories
   hyperopt_save_dir: hyperopt_results
   validation_save_dir: validation_results
-  inference_save_dir: inference_results
-  user_save_dir: user_model_results
+  inference_save_dir: prediction_results
+  user_save_dir: user_models
 
   # Whether to load predefined hyperparameters (best_params_*.json)
   use_params: false

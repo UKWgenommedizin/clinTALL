@@ -15,16 +15,16 @@ There are two main options to use clinTALL:
 - step2: download the pretrained model from zenodo: https://doi.org/10.5281/zenodo.18002152
 - step3: add your own data into clintall/data/user for prediction. Detailed file description can be found in the section 3.2 below 
 - step4: at the directory where clintall.py is located, execute following command
-   ```docker-compose up ```
-- step5: after the running, results can be found in clintall/.  Detailed file description can be found in the section 4.3 below 
+   ```docker-compose up ``` or  ```python clinTall.py```
+- step5: after the running, results can be found in clintall/prediction_results.  Detailed file description can be found in the section 4.3 below 
    
 2) Train a custom model on your data
 - install docker or python environment
 - git clone or download the repository
-- add your own data into clintall/data/user for prediction. Detailed file description can be found in the section 3.2 below
+- add your own data into clintall/data/user (unlabled data) and clintall/data/user/reference (labeled data) for training and prediction. Detailed file description can be found in the section 3.2 below
 - at the directory where clintall.py is located, execute following command
-   ```docker-compose up ```
-- after the running, results can be found in clintall/.  Detailed file description can be found in the section 4 below 
+   ```docker-compose up ``` or ```python clinTall.py```
+- after the running, results can be found in clintall/prediction_results, model files in clintall/user_models.  Detailed file description can be found in the section 4 below 
    
 
 ### Quick Start
@@ -45,7 +45,7 @@ ClinTall uses three top-level YAML sections:
 ```
 tasks:            # Which steps of the pipeline to run
 DataManager:      # Paths and data-related options
-Config:           # Training, optimization, and inference settings
+Config:           # Training, optimization, and prediction settings
 ```
 #### Supported tasks:
 | Task                 | Description                               |
@@ -55,11 +55,11 @@ Config:           # Training, optimization, and inference settings
 | `test_user_model`    | Train & test user models, save models     |
 | `predict_user_model` | Apply trained user models to user data    |
 
-Multiple tasks can be run sequentially. For predictions with user models (stored under user_model_results) pretrained models are provided and available at https://doi.org/10.5281/zenodo.18002152. (Performance reports for those are in inference_results). These models can be retrained if you provide data for it (under data/user/reference)
+Multiple tasks can be run sequentially. For predictions with user models (stored under user_model_results) pretrained models are provided and available at https://doi.org/10.5281/zenodo.18002152. (Performance reports for those are in prediction_results). These models can be retrained if you provide data for it (under data/user/reference)
 
 
 For formatting of input data please reference the files data/user/*.tsv (replace with your files). If only specific data modalities 
-are being used, specify this in the config.yaml file. Output of the models will be saved in inference_results.
+are being used, specify this in the config.yaml file. Output of the models will be saved in prediction_results.
 
 ### Reproducibility
 
@@ -82,8 +82,8 @@ are being used, specify this in the config.yaml file. Output of the models will 
 │   └── validation/
 ├── hyperopt_results/
 ├── validation_results/
-├── inference_results/
-└── user_model_results/
+├── prediction_results/
+└── user_models/
 
 ```
 
