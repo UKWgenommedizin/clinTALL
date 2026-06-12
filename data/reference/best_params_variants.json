@@ -1,0 +1,14 @@
+{
+    "lr": 0.0045018252041189215,
+    "weight_decay": 0.00019918471078909412,
+    "d_block": 256,
+    "d_embedding": 8,
+    "alpha": 0.17005403680679496,
+    "n_bins": 16,
+    "activation": false,
+    "epochs": 1000,
+    "dropout": 0.20572637793991333,
+    "n_blocks": 2,
+    "class_weighting": false,
+    "event_weighting": false
+}
