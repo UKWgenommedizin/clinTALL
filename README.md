@@ -7,7 +7,7 @@ The framework is designed to reproduce the experiments from the associated manus
 
 ## 1. Running clinTALL
 
-A minimal version (pretrained gene expression only model) of clinTALL is available as a [webapp](http://ec2-23-20-191-10.compute-1.amazonaws.com/).
+A minimal version of clinTALL is available as a [webapp](http://ec2-23-20-191-10.compute-1.amazonaws.com/).
 
 clinTALL is controlled via a single YAML configuration file (config.yaml) that defines
 which tasks to run, where data is located, and how models are trained and evaluated.
